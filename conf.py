@@ -31,7 +31,7 @@ release = 'v0.3.3'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'recconmark'
+    'recommonmark'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
