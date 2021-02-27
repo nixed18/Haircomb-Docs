@@ -1,2 +1,23 @@
 Claiming
 **********
+
+Once your Modified BTC is all synced up, you're ready to claim. If they aren't already open, start up combfullui.exe and the Modified BTC.
+
+1. Open a web-browser and type 127.0.0.1:2121 into the URL bar, and hit enter.
+#. Click on the Wallet link, near the top left.
+#. As its your first time using Haircomb, you don't have any private/public keys yet. Click on the Key Generate link, and after the page loads click "Back to wallet".
+#. You've just created a key! Before going any further, make sure you save. Click "Back to home", then using the entry field at the top of the screen, type in a name for your wallet and click "Fully save as". The your save file will appear in the same directory as combfullui.exe. *Note: If you attempt to save with a filename that's already taken, the save will fail. Be sure to save as a unique filename.*
+#. Now that you've saved, navigate back to your Wallet screen, where you can see the public key you just generated.
+#. Beside the public key you should see a link labelled "stealth addresses". Click it.
+#. The list of numbers below are addresses that can receive COMB and, their corresponding sweep button is pressed, will automatically put that COMB into your main public key. You can see the public in at the top of the page.
+
+Every BTC block, one instance of COMB is spawned. In order to claim it, you need to get one of these bc1 mining addresses to be the highest, **unseen** P2WSH address on the block. This is done by sending a very small amount of BTC (330 sats) to the address in question, as well as paying a large fee to the BTC miner. BTC miners almost always order the addresses on BTC blocks by fee size, so if you pay a higher fee than every other P2WSH address on the block, yours will likely be the highest, and you'll get to claim the COMB.
+
+*NOTE: If you try to claim COMB with a mining address and fail, do not reuse that address. COMB will only spawn in an unseen address, the moment you attempt to claim with an address it is burned.*
+
+To make it easier to claim COMB, there are a few tools available for use. In the Modified BTC, If you click on Window>Information, the bottom of the screen shoudl have a section labelled **Memory Pool.** There is a number to the left of the label "Current Number of Transactions". If you divide this number by 1000, you will get the current sats/vB fee that you need to beat. Knowing this information will make it easier to conserve funds while claiming.
+
+Another tool available is `ClaimVision`_. ClaimVision is a chart that shows each BTC block's highest P2WSH address at the time it was mined. Using this chart, you'll be able to see trends in the claiming fee, and determine the best times or days to claim during. ClaimVision requires using a Chrome-Based browser.
+
+
+.. _ClaimVision: https://21teeth.org/claimvision/ClaimVision.html

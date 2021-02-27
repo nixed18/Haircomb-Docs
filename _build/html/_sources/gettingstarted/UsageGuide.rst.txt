@@ -1,6 +1,8 @@
 General Use Guidelines
 ****************************
 
+To interact with Haircomb Core, open a web browser and type 127.0.0.1:2121 into the URL bar. If Haircomb is running, you will load into a basic UI that you can use to operate Haircomb.
+
 Haircomb relies on a commits.db file to store information from the Bitcoin blockchain. Unfortunately, the commits file is easy to corrupt. Here are some guidelines to follow to keep your Haircomb running smoothly.
  
  
