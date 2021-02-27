@@ -34,6 +34,39 @@
             
   <div class="section" id="building-combfullui-exe">
 <h1>Building CombFullUI.exe<a class="headerlink" href="#building-combfullui-exe" title="Permalink to this headline">¶</a></h1>
+<p>In order to use Haircomb, you’ll need to build the wallet program.</p>
+<dl class="simple">
+<dt>First you’ll need to download these tools:</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="https://golang.org">GoLang</a></p></li>
+<li><p><a class="reference external" href="https://git-scm.com/downloads">Git Bash</a></p></li>
+</ul>
+</dd>
+<dt>Next, open Git Bash, and a black command window will appear. Use the following commands:</dt><dd><ul class="simple">
+<li><p>cd Documents</p></li>
+<li><p>git clone <a class="reference external" href="https://github.com/natasha-otomoski/combfullui.git">https://github.com/natasha-otomoski/combfullui.git</a></p></li>
+<li><p>cd combfullui</p></li>
+<li><p>go get github.com/gorilla/mux</p></li>
+<li><p>go get github.com/sipa/bech32/ref/go/src/bech32</p></li>
+<li><p>go build</p></li>
+</ul>
+</dd>
+</dl>
+<p>There should now be a folder named “combfullui” in your Documents folder, and it should contain a file named “combfullui.exe.”</p>
+<dl>
+<dt>If you get the message “bash: go: command not found” while building, follow these steps:</dt><dd><ul class="simple">
+<li><p>Open Control Panel</p></li>
+<li><p>Open System and Security</p></li>
+<li><p>Open System</p></li>
+<li><p>Open Advanced System Settings</p></li>
+<li><p>Open the Advanced tab</p></li>
+<li><p>Open Environmental Variables</p></li>
+<li><p>Select System Variables Path</p></li>
+<li><p>Click Edit</p></li>
+<li><p>Add a new row “C:GoBin” (This should be the folder where “go.exe” was installed)</p></li>
+</ul>
+<p>Close and open Git Bash again, but this time omit the “git clone” step.</p>
+</dd>
+</dl>
 </div>
 
 
