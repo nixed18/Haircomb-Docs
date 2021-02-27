@@ -34,6 +34,18 @@
             
   <div class="section" id="syncing-the-modified-bitcoin-core-v0-18-1">
 <h1>Syncing the Modified Bitcoin Core v0.18.1<a class="headerlink" href="#syncing-the-modified-bitcoin-core-v0-18-1" title="Permalink to this headline">¶</a></h1>
+<p>Now that you’ve built the wallet program, you’re ready to download and sync the Modified Bitcoin Core.</p>
+<ol class="arabic simple">
+<li><p>Download the <a class="reference external" href="https://github.com/natasha-otomoski/bitcoin/releases/tag/0.18.1-prod">Modified BTC</a> and unzip it.</p></li>
+<li><p>Run combfullui.exe, and a black window should appear. Do not close this window.</p></li>
+<li><p>Go to the “btc” folder and open the “bin” folder. You should see a file called “bitcoin-qt.exe”.</p></li>
+<li><p>Run bitcoin-qt.exe, and choose a directory to store the BTC blockchain information. This location should have over 400GBs of free space.</p></li>
+<li><p>Once BTC window finishes synchronizing the headers and begins to download blocks, close the BTC window and run bitcoin-qt.exe again.</p></li>
+</ol>
+<p>Now to wait. It may take several days to finish downloading the full BTC blockchain. If your’re an expert and you’ve opted to copy over information from a previously existing BTC download, you will see a “Rescanning” screen at startup. It may appear as if there is no progress, but there is. Wait until the rescanning has finished.</p>
+<p>While the BTC chain is downloading, it is a good idea to familiarize yourself with Haircomb’s Usage Guidelines. Haircomb relies on building certain files that can be corrupted easily, if you are not careful. If you want to save yourself a headache, follow those guidelines very strictly.</p>
+<blockquote>
+<div></div></blockquote>
 </div>
 
 

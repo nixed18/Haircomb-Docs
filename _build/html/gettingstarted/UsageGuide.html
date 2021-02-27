@@ -34,6 +34,33 @@
             
   <div class="section" id="general-use-guidelines">
 <h1>General Use Guidelines<a class="headerlink" href="#general-use-guidelines" title="Permalink to this headline">¶</a></h1>
+<p>Haircomb relies on a commits.db file to store information from the Bitcoin blockchain. Unfortunately, the commits file is easy to corrupt. Here are some guidelines to follow to keep your Haircomb running smoothly.</p>
+<p><strong>Startup</strong></p>
+<ol class="arabic simple">
+<li><p>Launch “combfullui.exe”</p></li>
+<li><p>Launch the Modified BTC</p></li>
+</ol>
+<p><strong>Shutdown</strong></p>
+<ol class="arabic simple">
+<li><p>Shut down the Modified BTC. Wait for the Modified BTC to completely close.</p></li>
+<li><p>Open up the Haircomb client and click the Safe Shutdown button. Safe Shutdown will not shut down Haircomb unless your wallet has been saved properly.</p></li>
+</ol>
+<p>If you follow these steps when using Haircomb, your “commits.db” file should be fine. However, you can be extra careful and make a backup of your “commits.db” file, just in case.</p>
+<p><strong>Backup</strong></p>
+<ol class="arabic simple" start="0">
+<li><p>If your Haircomb is open, shut it down by following the Shutdown instructions.</p></li>
+<li><p>Shut down Haircomb by following the Shutdown instructions.</p></li>
+<li><p>Copy and paste your “commits.db” file</p></li>
+<li><p>Rename the copy if desired.</p></li>
+</ol>
+<p><strong>Restore</strong></p>
+<ol class="arabic simple" start="0">
+<li><p>If your Haircomb is open, shut it down by following the Shutdown instructions.</p></li>
+<li><p>Delete your “commits.db” file</p></li>
+<li><p>Make a copy of your commits backup, and move it to the same folder as your “combfullui.exe”</p></li>
+<li><p>Rename your Commits copy to “commits.db”</p></li>
+<li><p>Launch Haircomb by following the Startup instructions, and let the Modified BTC rebuild any missing commitments.</p></li>
+</ol>
 </div>
 
 
