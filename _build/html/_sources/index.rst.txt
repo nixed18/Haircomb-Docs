@@ -11,7 +11,8 @@ Welcome to Haircomb Core's documentation!
    :caption: Contents:
    
    Intro
-   howitworks/HowItWorks
+   gettingstarted/_GettingStarted
+   howitworks/_HowItWorks
 
 
 

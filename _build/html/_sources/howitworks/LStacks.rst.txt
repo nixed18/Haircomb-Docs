@@ -1,4 +1,4 @@
-Liquidity Stacks (Basic)
+Liquidity Stacks
 **************************
 
 Lquidity Stacks are Haircomb's way of splitting COMB up. When you create a Liquidity Stack, its address is composed of 3 numbers.
@@ -13,7 +13,7 @@ If Alice has 10 COMB in AliceWallet1, and wanted to send 2 COMB to Bob, she'll s
 
 **Never send COMB to a Liquidity Stack if you don't have as much COMB as the listed Amount.** Liquidity Stacks only trigger when they're holding as much of or more COMB than their listed Amount, so your COMB will be stuck! If Alice had tried to send Bob 20 COMB, her 10 COMB would remain trapped inside the Liquidity Stack, and neither Alice nor Bob would get any of the COMB.
 
-Liquidity Stacks can be chained together, to send COMB to more than one person using a single transaction. This is done by setting the Change Address to by another Liquidity Stack.
+Liquidity Stacks can be chained together to send COMB to more than one person using a single transaction. This is done by setting the Change Address to another Liquidity Stack.
 
 Alice has 10 COMB, and wants to send 2 COMB to Bob, and 3 COMB to Cindy. First, she makes the following Liquidity Stack:
 
