@@ -1,7 +1,7 @@
 Liquidity Stacks
 **************************
 
-Lquidity Stacks are Haircomb's way of splitting COMB up. When you create a Liquidity Stack, its address is composed of 3 numbers.
+Lquidity Stacks are Haircomb's way of splitting up COMB. When you create a Liquidity Stack, its address is composed of 3 numbers.
 
 1. The address of the person you'll be sending COMB to (the Receiving Address).
 2. The amount of COMB you'll be sending to them. (the Amount).
