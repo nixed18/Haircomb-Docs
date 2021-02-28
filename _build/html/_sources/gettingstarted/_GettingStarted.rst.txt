@@ -1,7 +1,7 @@
 Getting Started
 *****************
 
-This chapter will walk you through the steps needed to start claming COMB.
+This chapter will walk you through the steps you need to take to start claming COMB.
 
 
 .. toctree::

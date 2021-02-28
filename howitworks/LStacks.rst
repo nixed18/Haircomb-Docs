@@ -25,4 +25,4 @@ LStack2 = SHA256(LStack1, BobWallet, 2 COMB)
 
 Alice pays 10 COMB from AliceWallet1 into LStack2. The Stack triggers, and sends 2 COMB to Bob, and the remaining 8 COMB to the Change Address: LStack1. Once the 8 COMB reach LStack1 they trigger the stack; 3 COMB are sent to CindyWallet1, and the remaining 5 COMB are sent to AliceWallet2.
 
-By combining Liquidity Stacks, we can theoretically create a transaction that sends COMB to every single COMB wallet in existance, without any additional fees.
+By combining Liquidity Stacks, we can theoretically create a transaction that sends COMB to every single COMB wallet in existence, without any additional fees.
