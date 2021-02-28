@@ -8,4 +8,5 @@ Haircomb has a unique and complex transaction structure. While this makes for a 
    :maxdepth: 2
    :caption: Contents:
    
+   Basics
    LStacks

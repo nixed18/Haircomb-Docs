@@ -1,0 +1,242 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>The Basics &mdash; Haircomb Core v0.3.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Liquidity Stacks" href="LStacks.html" />
+    <link rel="prev" title="Understanding Haircomb" href="_HowItWorks.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Haircomb Core
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted/_GettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="_HowItWorks.html">Understanding Haircomb</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">The Basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#location">Location</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sha256">SHA256</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cat">CAT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#transactions">Transactions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="LStacks.html">Liquidity Stacks</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Haircomb Core</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="_HowItWorks.html">Understanding Haircomb</a> &raquo;</li>
+        
+      <li>The Basics</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/howitworks/Basics.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="the-basics">
+<h1>The Basics<a class="headerlink" href="#the-basics" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="location">
+<h2>Location<a class="headerlink" href="#location" title="Permalink to this headline">¶</a></h2>
+<p>Haircomb exists within the transaction data of the BTC blockchain. It does so by compressing information about Haircomb-related events into a 256bit hash, which it then converts to a P2WSH address. By sending BTC to this address, you have now recorded it on the BTC blockchain, and anybody who knows what they’re looking for can go and find it. This methodology allows Haircomb to publicly record minimal information (only the proof that an event happened) while the rest of the details are transferred privately, off-chain.</p>
+<p>In order to prevent double spends, Haircomb uses a specific type of public/private key encryption, a Winternitz One Time Signature scheme that uses 21 private keys per public key. The use of this scheme also happens to make Haircomb quantum-proof. If you’d like to read more about the specific mechanics of the scheme, please read the Advanced section of the documentation.</p>
+</div>
+<div class="section" id="sha256">
+<h2>SHA256<a class="headerlink" href="#sha256" title="Permalink to this headline">¶</a></h2>
+<p>Haircomb relies <strong>heavily</strong> on the SHA256 hash algorithm. To give a brief explanation, the algorithm takes any input and produces a 256bit number as an output. Not only that, but it does so in a completely irreversible way. The only way to determine what input generated a specific output is to actually try hashing the input and checking to see if the output is the one you’re looking for. This one-way compression will come up often within this documentation, any time you see the term “hashed,” it is specifically referring to using the SHA256 algorithm.</p>
+<p>While it may not be important to understand exactly how the algorithm works, what is important is to remember that any time you see “hashed” or “SHA256(X)”, it means that the value was converted into a 256bit integer, and that it is impossible to figure out what the input was without explicitly being told.</p>
+</div>
+<div class="section" id="cat">
+<h2>CAT<a class="headerlink" href="#cat" title="Permalink to this headline">¶</a></h2>
+<p>While reading this documentation you will often see the term CAT. It is short-form for the word “concatenate,” which refers to sticking information together in sequential order. For example, A CAT B CAT C == ABC, or 1 CAT 2 CAT 3 == 123. Haircomb uses this process to encrypt information by concatenating two pieces of information, then hashing the result.</p>
+</div>
+<div class="section" id="transactions">
+<h2>Transactions<a class="headerlink" href="#transactions" title="Permalink to this headline">¶</a></h2>
+<p>Due to its signature scheme, Haircomb uses a unique transaction methodology. Haircomb transactions are “a permanent redirect of all past, present and future funds.” Rather than thinking of a transaction as moving money from one wallet to another, Haircomb transactions can be visuallized as connecting pipes together. The funds are water, they flow automatically as far as the pipe goes, and then settle in the bottom. When another pipe is added onto the bottom of the chain, the COMB will continue to flow. If any funds are added somewhere up the chain, they automatically flow to the bottom. You cannot send partial funds; when you connect one address to another all the COMB in the first will flow to the second.</p>
+<p>This transaction type means that addresses can only ever have one output, and send all the COMB they have ever and will ever receive to that output. But if that’s true, then how can I pay someone a fraction of my COMB?</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="LStacks.html" class="btn btn-neutral float-right" title="Liquidity Stacks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="_HowItWorks.html" class="btn btn-neutral float-left" title="Understanding Haircomb" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright Nobody.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
