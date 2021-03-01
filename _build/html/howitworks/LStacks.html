@@ -88,10 +88,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../Intro.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../gettingstarted/_GettingStarted.html">Getting Started</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="_HowItWorks.html">Understanding Haircomb</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Basics.html">The Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Terminology.html">Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BTC.html">Bitcoin Blockchain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Transactions.html">Transactions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ColdWallets.html">Cold Wallets</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Liquidity Stacks</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Liquidity Stacks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mechanics">Mechanics</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -165,15 +170,22 @@
             
   <div class="section" id="liquidity-stacks">
 <h1>Liquidity Stacks<a class="headerlink" href="#liquidity-stacks" title="Permalink to this headline">¶</a></h1>
-<p>Lquidity Stacks are Haircomb’s way of splitting up COMB. When you create a Liquidity Stack, its address is composed of 3 numbers.</p>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Lquidity Stacks are Haircomb’s way of splitting up COMB.</p>
+<p>When you create a Liquidity Stack, its address is composed of 3 numbers:</p>
 <ol class="arabic simple">
 <li><p>The address of the person you’ll be sending COMB to (the Receiving Address).</p></li>
 <li><p>The amount of COMB you’ll be sending to them. (the Amount).</p></li>
 <li><p>The address where you want to remaining COMB to end up (the Change Address).</p></li>
 </ol>
+<p>Rather than send COMB directly to another wallet, you can send it to the address of a Liquidity Stack, which will siphon off the amount you specify before sending the remaining to your Change Address. During a transaction, you’ll enter in the place you want the funds to go, and how many funds you want to go there, and the wallet will create the Liquidity Stack for you. Once there is enough COMB in the Liquidity Stack  (equal to or greater than the amount you specified), the Liquidity Stack will trigger. The specified Amount of funds will go to the Receiving Address, and the remaining funds will go to the Change Address. If any more funds are ever sent to this Liquidity Stack, they will all go directly to the Change Address.</p>
+<p><strong>Never send COMB to a Liquidity Stack if you don’t have as much COMB as the listed Amount!</strong> Liquidity Stacks only trigger when they’re holding as much of or more COMB than their listed Amount, so your COMB will be stuck!</p>
+</div>
+<div class="section" id="mechanics">
+<h2>Mechanics<a class="headerlink" href="#mechanics" title="Permalink to this headline">¶</a></h2>
 <p>The format of the address is: SHA256(Change_Address CAT Receiving_Address CAT Amount)</p>
 <p>If Alice has 10 COMB in AliceWallet1, and wanted to send 2 COMB to Bob, she’ll send her COMB to a Liquidity Stack with an address that is composed using AliceWallet2, BobWallet, 2 COMB. Her COMB will enter the Liquidity Stack, and 2 COMB will be sent to BobWallet, while the rest of the COMB will be sent to AliceWallet2.</p>
-<p><strong>Never send COMB to a Liquidity Stack if you don’t have as much COMB as the listed Amount.</strong> Liquidity Stacks only trigger when they’re holding as much of or more COMB than their listed Amount, so your COMB will be stuck! If Alice had tried to send Bob 20 COMB, her 10 COMB would remain trapped inside the Liquidity Stack, and neither Alice nor Bob would get any of the COMB.</p>
 <p>Liquidity Stacks can be chained together to send COMB to more than one person using a single transaction. This is done by setting the Change Address to another Liquidity Stack.</p>
 <p>Alice has 10 COMB, and wants to send 2 COMB to Bob, and 3 COMB to Cindy. First, she makes the following Liquidity Stack:</p>
 <p>LStack1 = SHA256(AliceWallet2, CindyWallet, 3 COMB)</p>
@@ -181,6 +193,7 @@
 <p>LStack2 = SHA256(LStack1, BobWallet, 2 COMB)</p>
 <p>Alice pays 10 COMB from AliceWallet1 into LStack2. The Stack triggers, and sends 2 COMB to Bob, and the remaining 8 COMB to the Change Address: LStack1. Once the 8 COMB reach LStack1 they trigger the stack; 3 COMB are sent to CindyWallet1, and the remaining 5 COMB are sent to AliceWallet2.</p>
 <p>By combining Liquidity Stacks, we can theoretically create a transaction that sends COMB to every single COMB wallet in existence, without any additional fees.</p>
+</div>
 </div>
 
 

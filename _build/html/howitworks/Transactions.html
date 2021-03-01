@@ -39,7 +39,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Cold Wallets" href="ColdWallets.html" />
-    <link rel="prev" title="The Basics" href="Basics.html" /> 
+    <link rel="prev" title="Bitcoin Blockchain" href="BTC.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -89,7 +89,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../Intro.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../gettingstarted/_GettingStarted.html">Getting Started</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="_HowItWorks.html">Understanding Haircomb</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Basics.html">The Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Terminology.html">Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BTC.html">Bitcoin Blockchain</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Transactions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ColdWallets.html">Cold Wallets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LStacks.html">Liquidity Stacks</a></li>
@@ -168,7 +169,7 @@
 <h1>Transactions<a class="headerlink" href="#transactions" title="Permalink to this headline">¶</a></h1>
 <p>Haircomb uses a unique transaction methodology; transactions are a “permanent redirect of all past, present and future funds.” Rather than thinking of a transaction as moving money from one wallet to another, Haircomb transactions can be visualized as connecting pipes together. The funds are water, they flow automatically as far as the pipe goes, and then settle in the bottom. When another pipe is added onto the bottom of the chain, the COMB will continue to flow. If any funds are added somewhere up the chain, they automatically flow to the bottom. You cannot send partial funds; when you connect one address to another all the COMB in the first will flow to the second.</p>
 <p>After a user transacts in COMB, they’ll need to also give the transaction recipient the history of the funds that were sent. This is required to prove that you had the COMB to spend in the first place. If you a receive a transaction, make sure to back up the transaction history safely. If you ever lose your files, a private key will NOT be enough to rebuild your wallet; you’ll need the data from all the transactions that you have received. Transaction histories are saved in your wallet’s “.dat” file, along with other information such as your private keys. If you need to give somebody a transaction history, make sure to do so by accessing the Haircomb program and using the Export option. This will provide a relevant TX history, without including your private keys.</p>
-<p>This all-or-nothing transaction type means that addresses can only ever have one output, and send all the COMB they ever had and ever will have to the output address. This may seem limiting, however through the use of Liquidity Stacks a user can split up funds during a transaction. You will learn more about Liquidity stacks shortly.</p>
+<p>This all-or-nothing transaction type means that addresses can only ever have one output, and send all the COMB they ever had and ever will have to the output address. Although this may seem limiting, through the use of Liquidity Stacks a user can split up funds during a transaction. You will learn more about Liquidity stacks shortly.</p>
 </div>
 
 
@@ -178,7 +179,7 @@
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="ColdWallets.html" class="btn btn-neutral float-right" title="Cold Wallets" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="Basics.html" class="btn btn-neutral float-left" title="The Basics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="BTC.html" class="btn btn-neutral float-left" title="Bitcoin Blockchain" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

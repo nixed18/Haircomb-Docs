@@ -1,13 +1,13 @@
 Cold Wallets
 **************
 
-Basic
+Overview
 ---------
 
-Cold wallets are the core storage unit of Haircomb. A cold wallet has a private key made up of twenty-one 256bit numbers, and a public key made of one 256bit number. In order to send money out of a cold wallet, you'll need to sign a transaction by sending 330 sats to 21 P2WSH addresses on the BTC chain. These addresses are different for every cold wallet and transaction combination, and are committed to prevent users from double-spending their COMB. When you generate a new key in the Haircomb program, you are creating a new cold wallet.
+Cold wallets are the core storage unit of Haircomb. A cold wallet has a private key made up of twenty-one 256bit numbers, and a public key made of one 256bit number. In order to send money out of a cold wallet, you'll need to sign a transaction by sending 330 sats to 21 P2WSH addresses on the BTC chain. These addresses are different for every cold wallet and transaction combination, and are committed to prevent users from double-spending their COMB. It doesn't matter if you commit them all in a single BTC transaction, or spread them out amongst many, what matters is that they end up on the BTC blockchain. When you generate a new key in the Haircomb program, you are creating a new cold wallet.
 
 
-Advanced
+Mechanics
 ------------
 
 Structure

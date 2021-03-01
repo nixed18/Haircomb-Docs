@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>The Basics &mdash; Haircomb Core v0.3.3 documentation</title>
+  <title>Terminology &mdash; Haircomb Core v0.3.3 documentation</title>
   
 
   
@@ -38,7 +38,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Transactions" href="Transactions.html" />
+    <link rel="next" title="Bitcoin Blockchain" href="BTC.html" />
     <link rel="prev" title="Understanding Haircomb" href="_HowItWorks.html" /> 
 </head>
 
@@ -89,16 +89,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../Intro.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../gettingstarted/_GettingStarted.html">Getting Started</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="_HowItWorks.html">Understanding Haircomb</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">The Basics</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#location">Location</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#terminology">Terminology</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#sha256">SHA256</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cat">CAT</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#commit">Commit</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Terminology</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sha256">SHA256</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hashchain">HashChain</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cat">CAT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#commit">Commit</a></li>
 </ul>
 </li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="BTC.html">Bitcoin Blockchain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Transactions.html">Transactions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ColdWallets.html">Cold Wallets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LStacks.html">Liquidity Stacks</a></li>
@@ -154,13 +152,13 @@
         
           <li><a href="_HowItWorks.html">Understanding Haircomb</a> &raquo;</li>
         
-      <li>The Basics</li>
+      <li>Terminology</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/howitworks/Basics.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/howitworks/Terminology.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -173,28 +171,32 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="the-basics">
-<h1>The Basics<a class="headerlink" href="#the-basics" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="location">
-<h2>Location<a class="headerlink" href="#location" title="Permalink to this headline">¶</a></h2>
-<p>Haircomb exists within the transaction data of the BTC blockchain. It does so by compressing information about Haircomb-related events into a 256bit hash, which it then converts to a P2WSH address. By sending BTC to this address, you have now recorded it on the BTC blockchain, and anybody who knows what they’re looking for can go and find it. This methodology allows Haircomb to publicly record minimal information (only the proof that an event happened) while the rest of the details are transferred privately, off-chain.</p>
-<p>In order to prevent double spends, Haircomb uses a specific type of public/private key encryption, a Winternitz One Time Signature scheme that uses 21 private keys per public key. The use of this scheme also happens to make Haircomb quantum-proof. This will be discussed further in the Keys section.</p>
-</div>
-<div class="section" id="terminology">
-<h2>Terminology<a class="headerlink" href="#terminology" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="terminology">
+<h1>Terminology<a class="headerlink" href="#terminology" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="sha256">
-<h3>SHA256<a class="headerlink" href="#sha256" title="Permalink to this headline">¶</a></h3>
+<h2>SHA256<a class="headerlink" href="#sha256" title="Permalink to this headline">¶</a></h2>
 <p>Haircomb relies <strong>heavily</strong> on the SHA256 hash algorithm. To give a brief explanation, the algorithm takes any input and produces a 256bit number as an output. Not only that, but it does so in a completely irreversible way. The only way to determine what input generated a specific output is to actually try hashing the input and checking to see if the output is the one you’re looking for. This one-way compression will come up often within this documentation, any time you see the term “hashed,” it is specifically referring to using the SHA256 algorithm.</p>
 <p>While it may not be important to understand exactly how the algorithm works, what is important is to remember that any time you see “hashed” or “SHA256(X)”, it means that the value was converted into a 256bit integer, and that it is impossible to figure out what the input was without explicitly being told.</p>
 </div>
+<div class="section" id="hashchain">
+<h2>HashChain<a class="headerlink" href="#hashchain" title="Permalink to this headline">¶</a></h2>
+<p>A hashchain is the structure that results from taking a piece of information, hashing it, and then hashing the result. This can be repeated ad nauseam. Below you will find the first five links in the hashchain that begins with the number 1.</p>
+<ol class="arabic simple">
+<li><p>1</p></li>
+<li><p>6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b</p></li>
+<li><p>e0bc614e4fd035a488619799853b075143deea596c477b8dc077e309c0fe42e9</p></li>
+<li><p>d6a804981ea7ce374acc21c9a8bf82f50b684b0ea4bdf8b26a7a775291aaf7a6</p></li>
+<li><p>ad376767fc04814220cc25c79b2777cd14704f23f1830318b5bd9eb97e4fedf6</p></li>
+</ol>
+<p>You can try it out for yourself here: <a class="reference external" href="https://emn178.github.io/online-tools/sha256.html">https://emn178.github.io/online-tools/sha256.html</a></p>
+</div>
 <div class="section" id="cat">
-<h3>CAT<a class="headerlink" href="#cat" title="Permalink to this headline">¶</a></h3>
-<p>While reading this documentation you will often see the term CAT. It is short-form for the word “concatenate,” which refers to sticking information together in sequential order. For example, A CAT B CAT C == ABC, or 1 CAT 2 CAT 3 == 123. Haircomb uses this process to encrypt information by concatenating two pieces of information, then hashing the result.</p>
+<h2>CAT<a class="headerlink" href="#cat" title="Permalink to this headline">¶</a></h2>
+<p>The term CAT is short-form for the word “concatenate,” which refers to sticking information together in sequential order. For example, A CAT B CAT C == ABC, or 1 CAT 2 CAT 3 == 123. Haircomb uses this process to encrypt information by concatenating two pieces of information, then hashing the result.</p>
 </div>
 <div class="section" id="commit">
-<h3>Commit<a class="headerlink" href="#commit" title="Permalink to this headline">¶</a></h3>
+<h2>Commit<a class="headerlink" href="#commit" title="Permalink to this headline">¶</a></h2>
 <p>“Commit” is another term you will frequently see. In this context, it refers to information that has been permanently stored on the BTC chain. Once information has been committed, there’s no taking it back.</p>
-</div>
 </div>
 </div>
 
@@ -204,7 +206,7 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="Transactions.html" class="btn btn-neutral float-right" title="Transactions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="BTC.html" class="btn btn-neutral float-right" title="Bitcoin Blockchain" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="_HowItWorks.html" class="btn btn-neutral float-left" title="Understanding Haircomb" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 

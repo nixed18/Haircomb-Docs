@@ -5,6 +5,8 @@ Haircomb uses a unique transaction methodology; transactions are a "permanent re
 
 After a user transacts in COMB, they'll need to also give the transaction recipient the history of the funds that were sent. This is required to prove that you had the COMB to spend in the first place. If you a receive a transaction, make sure to back up the transaction history safely. If you ever lose your files, a private key will NOT be enough to rebuild your wallet; you'll need the data from all the transactions that you have received. Transaction histories are saved in your wallet's ".dat" file, along with other information such as your private keys. If you need to give somebody a transaction history, make sure to do so by accessing the Haircomb program and using the Export option. This will provide a relevant TX history, without including your private keys.
 
-This all-or-nothing transaction type means that addresses can only ever have one output, and send all the COMB they ever had and ever will have to the output address. This may seem limiting, however through the use of Liquidity Stacks a user can split up funds during a transaction. You will learn more about Liquidity stacks shortly.
+This all-or-nothing transaction type means that addresses can only ever have one output, and send all the COMB they ever had and ever will have to the output address. Although this may seem limiting, through the use of Liquidity Stacks a user can split up funds during a transaction. You will learn more about Liquidity stacks shortly.
+
+
 
 

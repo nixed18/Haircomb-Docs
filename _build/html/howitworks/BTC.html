@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Understanding Haircomb &mdash; Haircomb Core v0.3.3 documentation</title>
+  <title>Bitcoin Blockchain &mdash; Haircomb Core v0.3.3 documentation</title>
   
 
   
@@ -38,8 +38,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Terminology" href="Terminology.html" />
-    <link rel="prev" title="Claiming" href="../gettingstarted/Claiming.html" /> 
+    <link rel="next" title="Transactions" href="Transactions.html" />
+    <link rel="prev" title="Terminology" href="Terminology.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,9 +88,9 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../Intro.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../gettingstarted/_GettingStarted.html">Getting Started</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Understanding Haircomb</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="_HowItWorks.html">Understanding Haircomb</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Terminology.html">Terminology</a></li>
-<li class="toctree-l2"><a class="reference internal" href="BTC.html">Bitcoin Blockchain</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Bitcoin Blockchain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Transactions.html">Transactions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ColdWallets.html">Cold Wallets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LStacks.html">Liquidity Stacks</a></li>
@@ -144,13 +144,15 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Understanding Haircomb</li>
+          <li><a href="_HowItWorks.html">Understanding Haircomb</a> &raquo;</li>
+        
+      <li>Bitcoin Blockchain</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/howitworks/_HowItWorks.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/howitworks/BTC.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -163,34 +165,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="understanding-haircomb">
-<h1>Understanding Haircomb<a class="headerlink" href="#understanding-haircomb" title="Permalink to this headline">¶</a></h1>
-<p>Haircomb has a unique and complex transaction structure. While this makes for a very interesting cryptocurrency, it also means that it can be difficult to understand how it all works. The goal of this documentation to to help you learn about how Haircomb functions, so you can be confident during every step of a transaction.</p>
-<p>Certain pages will be split up into an <strong>Overview</strong> section and a <strong>Mechanics</strong> section; the Overview sections go over the general desciption of the current topic, whereas the Mechanics sections get into the specifics of how the topic works. If it’s your first time reading, you may wish to skip the Mechanics sections for now, and come back to them once you have a better understanding of the overall workings of Haircomb.</p>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Terminology.html">Terminology</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Terminology.html#sha256">SHA256</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Terminology.html#hashchain">HashChain</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Terminology.html#cat">CAT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Terminology.html#commit">Commit</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="BTC.html">Bitcoin Blockchain</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Transactions.html">Transactions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ColdWallets.html">Cold Wallets</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ColdWallets.html#overview">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ColdWallets.html#mechanics">Mechanics</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="LStacks.html">Liquidity Stacks</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="LStacks.html#overview">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LStacks.html#mechanics">Mechanics</a></li>
-</ul>
-</li>
-</ul>
-</div>
+  <div class="section" id="bitcoin-blockchain">
+<h1>Bitcoin Blockchain<a class="headerlink" href="#bitcoin-blockchain" title="Permalink to this headline">¶</a></h1>
+<p>Haircomb exists within the transaction data of the BTC blockchain. It does so by compressing information about Haircomb-related events into a 256bit hash, which it then converts to a P2WSH address. By sending BTC to this address, you have now recorded it on the BTC blockchain, and anybody who knows what they’re looking for can go and find it. This methodology allows Haircomb to publicly record minimal information (only the proof that an event happened) while the rest of the details are transferred privately, off-chain.</p>
+<p>In order to prevent double spends, Haircomb uses a specific type of public/private key encryption, a Winternitz One Time Signature scheme that uses 21 private keys per public key. The use of this scheme also happens to make Haircomb quantum-proof. This will be discussed further in the Keys section.</p>
 </div>
 
 
@@ -199,8 +177,8 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="Terminology.html" class="btn btn-neutral float-right" title="Terminology" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="../gettingstarted/Claiming.html" class="btn btn-neutral float-left" title="Claiming" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Transactions.html" class="btn btn-neutral float-right" title="Transactions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Terminology.html" class="btn btn-neutral float-left" title="Terminology" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

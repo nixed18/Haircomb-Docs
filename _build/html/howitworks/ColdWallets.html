@@ -89,11 +89,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../Intro.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../gettingstarted/_GettingStarted.html">Getting Started</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="_HowItWorks.html">Understanding Haircomb</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Basics.html">The Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Terminology.html">Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BTC.html">Bitcoin Blockchain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Transactions.html">Transactions</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Cold Wallets</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#basic">Basic</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#advanced">Advanced</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mechanics">Mechanics</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#structure">Structure</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#transacting">Transacting</a></li>
 </ul>
@@ -174,12 +175,12 @@
             
   <div class="section" id="cold-wallets">
 <h1>Cold Wallets<a class="headerlink" href="#cold-wallets" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="basic">
-<h2>Basic<a class="headerlink" href="#basic" title="Permalink to this headline">¶</a></h2>
-<p>Cold wallets are the core storage unit of Haircomb. A cold wallet has a private key made up of twenty-one 256bit numbers, and a public key made of one 256bit number. In order to send money out of a cold wallet, you’ll need to sign a transaction by sending 330 sats to 21 P2WSH addresses on the BTC chain. These addresses are different for every cold wallet and transaction combination, and are committed to prevent users from double-spending their COMB. When you generate a new key in the Haircomb program, you are creating a new cold wallet.</p>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Cold wallets are the core storage unit of Haircomb. A cold wallet has a private key made up of twenty-one 256bit numbers, and a public key made of one 256bit number. In order to send money out of a cold wallet, you’ll need to sign a transaction by sending 330 sats to 21 P2WSH addresses on the BTC chain. These addresses are different for every cold wallet and transaction combination, and are committed to prevent users from double-spending their COMB. It doesn’t matter if you commit them all in a single BTC transaction, or spread them out amongst many, what matters is that they end up on the BTC blockchain. When you generate a new key in the Haircomb program, you are creating a new cold wallet.</p>
 </div>
-<div class="section" id="advanced">
-<h2>Advanced<a class="headerlink" href="#advanced" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="mechanics">
+<h2>Mechanics<a class="headerlink" href="#mechanics" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="structure">
 <h3>Structure<a class="headerlink" href="#structure" title="Permalink to this headline">¶</a></h3>
 <p>A cold wallet’s public key is generated from the 21 private keys using the following method:</p>
