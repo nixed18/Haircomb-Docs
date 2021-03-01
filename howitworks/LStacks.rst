@@ -9,7 +9,7 @@ Lquidity Stacks are Haircomb's way of splitting up COMB. When you create a Liqui
 
 The format of the address is: SHA256(Change_Address CAT Receiving_Address CAT Amount)
 
-If Alice has 10 COMB in AliceWallet1, and wanted to send 2 COMB to Bob, she'll send her COMB to a Liquidity Stack who's address is composed using AliceWallet2, BobWallet, 2 COMB. Her COMB will enter the Liquidity Stack, and 2 COMB will be sent to BobWallet, while the rest of the COMB will be sent to AliceWallet2.
+If Alice has 10 COMB in AliceWallet1, and wanted to send 2 COMB to Bob, she'll send her COMB to a Liquidity Stack with an address that is composed using AliceWallet2, BobWallet, 2 COMB. Her COMB will enter the Liquidity Stack, and 2 COMB will be sent to BobWallet, while the rest of the COMB will be sent to AliceWallet2.
 
 **Never send COMB to a Liquidity Stack if you don't have as much COMB as the listed Amount.** Liquidity Stacks only trigger when they're holding as much of or more COMB than their listed Amount, so your COMB will be stuck! If Alice had tried to send Bob 20 COMB, her 10 COMB would remain trapped inside the Liquidity Stack, and neither Alice nor Bob would get any of the COMB.
 

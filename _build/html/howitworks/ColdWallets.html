@@ -1,0 +1,273 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Cold Wallets &mdash; Haircomb Core v0.3.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Liquidity Stacks" href="LStacks.html" />
+    <link rel="prev" title="Transactions" href="Transactions.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Haircomb Core
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted/_GettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="_HowItWorks.html">Understanding Haircomb</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Basics.html">The Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Transactions.html">Transactions</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Cold Wallets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#basic">Basic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#advanced">Advanced</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#structure">Structure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#transacting">Transacting</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="LStacks.html">Liquidity Stacks</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Haircomb Core</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="_HowItWorks.html">Understanding Haircomb</a> &raquo;</li>
+        
+      <li>Cold Wallets</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/howitworks/ColdWallets.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="cold-wallets">
+<h1>Cold Wallets<a class="headerlink" href="#cold-wallets" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="basic">
+<h2>Basic<a class="headerlink" href="#basic" title="Permalink to this headline">¶</a></h2>
+<p>Cold wallets are the core storage unit of Haircomb. A cold wallet has a private key made up of twenty-one 256bit numbers, and a public key made of one 256bit number. In order to send money out of a cold wallet, you’ll need to sign a transaction by sending 330 sats to 21 P2WSH addresses on the BTC chain. These addresses are different for every cold wallet and transaction combination, and are committed to prevent users from double-spending their COMB. When you generate a new key in the Haircomb program, you are creating a new cold wallet.</p>
+</div>
+<div class="section" id="advanced">
+<h2>Advanced<a class="headerlink" href="#advanced" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="structure">
+<h3>Structure<a class="headerlink" href="#structure" title="Permalink to this headline">¶</a></h3>
+<p>A cold wallet’s public key is generated from the 21 private keys using the following method:</p>
+<ol class="arabic simple">
+<li><p>Take the first private key, and hash it 59213 times.</p></li>
+<li><p>Repeat for the remaining private keys.</p></li>
+<li><p>Take the results and concatenate them in numerical order (result_1 CAT result_2 CAT result_3 …)</p></li>
+<li><p>Hash the value. The result of this hash is the wallet public key.</p></li>
+</ol>
+</div>
+<div class="section" id="transacting">
+<h3>Transacting<a class="headerlink" href="#transacting" title="Permalink to this headline">¶</a></h3>
+<p>The process to determine the 21 P2WSH addresses that make up a cold wallet’s transaction signature is demonstrated below.</p>
+<p>Alice wants to send Bob all of her COMB.</p>
+<ol class="arabic simple">
+<li><p>Alice creates the transaction id; SHA256(Alice_Pubkey CAT Bob_Pubkey)</p></li>
+<li><p>She then inserts the transaction ID into a function called CutCombWhere()</p></li>
+<li><p>CutCombWhere will spit out 21 unsigned integers that total to 59213.</p></li>
+<li><p>Alice hashes each private key X times, where X is 59213 - the key’s corresponding CutCombWhere() number. These 21 numbers make up the signature of the transaction.</p></li>
+<li><p>The hashed result is then concatenated with the whitepaper’s hash and hashed again.</p></li>
+<li><p>Alice now has 21 numbers which she then encodes to segwit and commits to the BTC blockchain.</p></li>
+<li><p>After 6 confirmation, the COMB are no longer in Alice’s cold wallet.</p></li>
+</ol>
+<p>Now that she has sent the transaction, she needs to give Bob the information that he needs to receive the transaction.</p>
+<ol class="arabic simple">
+<li><p>Alice gives Bob the transaction ID components (her address and his address) and transaction signature, as well as a complete transaction history for the cold wallet to prove how many COMB it contained.</p></li>
+<li><p>Bob validates the transaction history to make sure that Alice’s wallet had the funds she said it did.</p></li>
+<li><p>Bob checks to make sure that the transaction signature has been committed to the BTC blockchain.</p></li>
+</ol>
+<p>If the signature is not committed to the BTC blockchain, Bob knows the transaction is invalid. But Bob isn’t done yet, he still must check for double-spends, and confirm that the signature matches the public key.</p>
+<ol class="arabic simple">
+<li><p>Bob calculates the transaction ID from the addresses that Alice gave him.</p></li>
+<li><p>He then runs the ID through CutCombWhere(), and gets the same 21 small numbers that Alice did.</p></li>
+<li><p>Bob hashes each of the 21 signature numbers X times, where X is the number’s corresponding CutCombWhere() number. After each individual hash, Bob hashes the result with the whitepaper hash and checks to see if the result has been committed on the BTC blockchain.</p></li>
+<li><p>If Bob finds any results that have been committed before the current transaction was signed and committed,, Bob knows that this address has already been burnt, and rejects the transaction.</p></li>
+<li><p>After Bob has finished hashing each of the 21 chains he takes the last result of each chain, concatenates them, and hashes them. If the rsult is the same as Alice’s public key, he knows the transaction signature is correct.</p></li>
+</ol>
+<p>If the signature was committed, there was no double spend, and the transaction data correctly matched the signature, Bob now knows that he has the COMB Alice sent.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="LStacks.html" class="btn btn-neutral float-right" title="Liquidity Stacks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Transactions.html" class="btn btn-neutral float-left" title="Transactions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright Nobody.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
