@@ -7,7 +7,7 @@ Haircomb relies **heavily** on the SHA256 hash algorithm. To give a brief explan
 
 While it may not be important to understand exactly how the algorithm works, what is important is to remember that any time you see "hashed" or "SHA256(X)", it means that the value was converted into a 256bit integer, and that it is impossible to figure out what the input was without explicitly being told.
 
-HashChain
+Hashchain
 ~~~~~~~~~~~~~~
 A hashchain is the structure that results from taking a piece of information, hashing it, and then hashing the result. This can be repeated ad nauseam. Below you will find the first five links in the hashchain that begins with the number 1.
 

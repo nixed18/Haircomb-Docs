@@ -11,7 +11,7 @@ Now that you've built the wallet program, you're ready to download and sync the 
 
 Now to wait. It may take several days to finish downloading the full BTC blockchain. If your're an expert and you've opted to copy over information from a previously existing BTC download, you will see a "Rescanning" screen at startup. It may appear as if there is no progress, but there is. Wait until the rescanning has finished.
 
-While the BTC chain is downloading, it is a good idea to familiarize yourself with Haircomb's Usage Guidelines. Haircomb relies on building certain files that can be corrupted easily when used incorrectly. If you want to save yourself a headache, follow those guidelines very strictly.
+While the BTC chain is downloading, it is a good idea to familiarize yourself with Haircomb's General Use Guidelines. Haircomb relies on building certain files that can be corrupted easily if used incorrectly. If you want to save yourself a headache, follow those guidelines very strictly.
 
 
 

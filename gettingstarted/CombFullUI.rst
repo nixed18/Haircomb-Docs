@@ -31,7 +31,7 @@ If you get the message "bash: go: command not found" while building, follow thes
 
 Add a new row "C:\\Go\\Bin" (This should be the folder where "go.exe" was installed)
  
-Close and open Git Bash again, but this time omit the "git clone" step.
+Close and open Git Bash again. Repeat the command steps, but this time omit the "git clone" step.
 
 
  

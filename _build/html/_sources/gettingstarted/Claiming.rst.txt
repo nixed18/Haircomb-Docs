@@ -15,7 +15,7 @@ Every BTC block, one instance of COMB is spawned. In order to claim it, you need
 
 *NOTE: If you try to claim COMB with a mining address and fail, do not reuse that address. COMB will only spawn in an unseen address, the moment you attempt to claim with an address it is burned.*
 
-There are a fcouple tools available that make claiming COMB much easier. In the Modified BTC, if you click on Window>Information, the bottom of the screen should have a section labelled **Memory Pool.** There is a number to the left of the label "Current Number of Transactions". If you divide this number by 1000, you will get the current sats/vB fee that you need to beat. Knowing this information will make it easier to conserve funds while claiming.
+There are a couple tools available that make claiming COMB much easier. In the Modified BTC, if you click on Window>Information, the bottom of the screen should have a section labelled **Memory Pool.** There is a number to the left of the label "Current Number of Transactions". If you divide this number by 1000, you will get the current sats/vB fee that you need to beat. Knowing this information will make it easier to conserve funds while claiming.
 
 Another tool available is `ClaimVision`_. ClaimVision is a chart that shows each BTC block's highest P2WSH address at the time it was mined. Using this chart, you'll be able to see trends in the claiming fee, and determine the best times or days to claim. ClaimVision requires using a Chrome-Based browser.
 

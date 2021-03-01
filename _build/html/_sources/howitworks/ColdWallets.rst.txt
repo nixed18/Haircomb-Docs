@@ -4,7 +4,9 @@ Cold Wallets
 Overview
 ---------
 
-Cold wallets are the core storage unit of Haircomb. A cold wallet has a private key made up of twenty-one 256bit numbers, and a public key made of one 256bit number. In order to send money out of a cold wallet, you'll need to sign a transaction by sending 330 sats to 21 P2WSH addresses on the BTC chain. These addresses are different for every cold wallet and transaction combination, and are committed to prevent users from double-spending their COMB. It doesn't matter if you commit them all in a single BTC transaction, or spread them out amongst many, what matters is that they end up on the BTC blockchain. When you generate a new key in the Haircomb program, you are creating a new cold wallet.
+Cold wallets are the core storage unit of Haircomb. A cold wallet has a private key made up of twenty-one 256bit numbers, and a public key made of one 256bit number. In order to send money out of a cold wallet, you'll need to sign a transaction by sending 330 sats to 21 P2WSH addresses on the BTC chain. These addresses are different for every cold wallet and transaction combination, and are committed to prevent users from double-spending their COMB. It doesn't matter if you commit them all in a single BTC transaction, or spread them out amongst many, what matters is that they end up on the BTC blockchain. 
+
+When you generate a new key in Wallet section of the Haircomb program, you are creating a new cold wallet.
 
 
 Mechanics
@@ -34,11 +36,11 @@ Alice wants to send Bob all of her COMB.
 #. Alice hashes each private key X times, where X is 59213 - the key's corresponding CutCombWhere() number. These 21 numbers make up the signature of the transaction.
 #. The hashed result is then concatenated with the whitepaper's hash and hashed again.
 #. Alice now has 21 numbers which she then encodes to segwit and commits to the BTC blockchain.
-#. After 6 confirmation, the COMB are no longer in Alice's cold wallet.
+#. After 6 BTC block confirmations, the COMB are no longer in Alice's cold wallet.
 
 Now that Alice has sent the transaction, she needs to give Bob the information that he needs to receive the transaction.
 
-1. Alice gives Bob the transaction ID components (her address and his address) and transaction signature, as well as a complete transaction history for the cold wallet to prove how many COMB it contained.
+1. Alice gives Bob the transaction ID components (her address and his address) and transaction signature, as well as a complete transaction history for her cold wallet to prove how many COMB it contained.
 #. Bob validates the transaction history to make sure that Alice's wallet had the funds she said it did.
 #. Bob checks to make sure that the transaction signature has been committed to the BTC blockchain.
 
