@@ -203,7 +203,7 @@
 <li><p>Alice now has 21 numbers which she then encodes to segwit and commits to the BTC blockchain.</p></li>
 <li><p>After 6 confirmation, the COMB are no longer in Alice’s cold wallet.</p></li>
 </ol>
-<p>Now that she has sent the transaction, she needs to give Bob the information that he needs to receive the transaction.</p>
+<p>Now that Alice has sent the transaction, she needs to give Bob the information that he needs to receive the transaction.</p>
 <ol class="arabic simple">
 <li><p>Alice gives Bob the transaction ID components (her address and his address) and transaction signature, as well as a complete transaction history for the cold wallet to prove how many COMB it contained.</p></li>
 <li><p>Bob validates the transaction history to make sure that Alice’s wallet had the funds she said it did.</p></li>
@@ -214,8 +214,8 @@
 <li><p>Bob calculates the transaction ID from the addresses that Alice gave him.</p></li>
 <li><p>He then runs the ID through CutCombWhere(), and gets the same 21 small numbers that Alice did.</p></li>
 <li><p>Bob hashes each of the 21 signature numbers X times, where X is the number’s corresponding CutCombWhere() number. After each individual hash, Bob hashes the result with the whitepaper hash and checks to see if the result has been committed on the BTC blockchain.</p></li>
-<li><p>If Bob finds any results that have been committed before the current transaction was signed and committed,, Bob knows that this address has already been burnt, and rejects the transaction.</p></li>
-<li><p>After Bob has finished hashing each of the 21 chains he takes the last result of each chain, concatenates them, and hashes them. If the rsult is the same as Alice’s public key, he knows the transaction signature is correct.</p></li>
+<li><p>If Bob finds any results that have been committed before the current transaction was signed and committed, Bob knows that this address has already been burnt, and rejects the transaction.</p></li>
+<li><p>After Bob has finished hashing each of the 21 chains he takes the last result of each chain, concatenates them, and hashes them. If the result is the same as Alice’s public key, he knows the transaction signature is correct.</p></li>
 </ol>
 <p>If the signature was committed, there was no double spend, and the transaction data correctly matched the signature, Bob now knows that he has the COMB Alice sent.</p>
 </div>

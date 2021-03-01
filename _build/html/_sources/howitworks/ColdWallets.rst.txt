@@ -36,7 +36,7 @@ Alice wants to send Bob all of her COMB.
 #. Alice now has 21 numbers which she then encodes to segwit and commits to the BTC blockchain.
 #. After 6 confirmation, the COMB are no longer in Alice's cold wallet.
 
-Now that she has sent the transaction, she needs to give Bob the information that he needs to receive the transaction.
+Now that Alice has sent the transaction, she needs to give Bob the information that he needs to receive the transaction.
 
 1. Alice gives Bob the transaction ID components (her address and his address) and transaction signature, as well as a complete transaction history for the cold wallet to prove how many COMB it contained.
 #. Bob validates the transaction history to make sure that Alice's wallet had the funds she said it did.
@@ -47,7 +47,7 @@ If the signature is not committed to the BTC blockchain, Bob knows the transacti
 1. Bob calculates the transaction ID from the addresses that Alice gave him.
 #. He then runs the ID through CutCombWhere(), and gets the same 21 small numbers that Alice did.
 #. Bob hashes each of the 21 signature numbers X times, where X is the number's corresponding CutCombWhere() number. After each individual hash, Bob hashes the result with the whitepaper hash and checks to see if the result has been committed on the BTC blockchain.
-#. If Bob finds any results that have been committed before the current transaction was signed and committed,, Bob knows that this address has already been burnt, and rejects the transaction.
-#. After Bob has finished hashing each of the 21 chains he takes the last result of each chain, concatenates them, and hashes them. If the rsult is the same as Alice's public key, he knows the transaction signature is correct.
+#. If Bob finds any results that have been committed before the current transaction was signed and committed, Bob knows that this address has already been burnt, and rejects the transaction.
+#. After Bob has finished hashing each of the 21 chains he takes the last result of each chain, concatenates them, and hashes them. If the result is the same as Alice's public key, he knows the transaction signature is correct.
 
 If the signature was committed, there was no double spend, and the transaction data correctly matched the signature, Bob now knows that he has the COMB Alice sent.
